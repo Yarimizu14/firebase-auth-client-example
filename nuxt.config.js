@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 export default {
   mode: 'spa',
   /*
@@ -14,12 +16,19 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css' },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: '@/components/loading.vue',
   /*
    ** Global CSS
    */
@@ -34,7 +43,9 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/dotenv',
+    'bootstrap-vue/nuxt'
   ],
   /*
    ** Axios module configuration
@@ -50,5 +61,9 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  bootstrapVue: {
+    bootstrapCSS: true,
+    bootstrapVueCSS: true
   }
 }
