@@ -19,7 +19,7 @@
     "element-ui": "^2.4.11",
     "firebase": "^6.2.0",
     "firebaseui": "^4.0.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.16.3",
     "vuexfire": "^3.0.0"
   },
   "devDependencies": {
